@@ -1,5 +1,5 @@
 # Engine
-A file-based all-in-one module architecture for PHP:
+A file-based all-in-one module architecture for PHP with:
 * Automatic parameter validation
 * Highly dense unit testing, integrated by default
 * Automatic benchmarking and documentation
@@ -28,11 +28,11 @@ $str_hour = call('temporal', 'hourNumberToString', array(
 // E_USER_ERROR: invalid parameter "numeric_hour" in /temporal/hourNumberToString
 ```
 Example parameter types:
-* `array`
-* `1-5 char string`
-* `venue id`
-* `email`
-* `positive int`
+* `'array'`
+* `'1-5 char string'`
+* `'venue id'`
+* `'email'`
+* `'positive int'`
 
 ### Documentation
 ```php
