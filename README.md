@@ -9,7 +9,7 @@ One-time initialization:
 define(ENGINE_ROOT, 'path/to/engines');
 require_once('engine.php');
 ```
-Calling the engine file /temporal/hourNumberToString.php:
+Calling an engine file:
 ```php
 $str_hour = call('temporal', 'hourNumberToString', array(
 	'numeric_hour' => 2330,
@@ -23,15 +23,13 @@ echo $str_hour; // "11:30 pm"
 ```php
 $str_hour = call('temporal', 'hourNumberToString', array(
 	'numeric_hour' => 'WHOOPS!',
-	'noonAndMidnight' => true,
 ));
 // E_USER_ERROR: invalid parameter "numeric_hour" in /temporal/hourNumberToString
 ```
 ### Documentation
 ```php
 echo engineDetails('event', 'get');
-/*
-[
+/* output: [
 	location => "/engines/event/get.php"
 	description => "Retrieve a single event from the database",
 	parameters => [
@@ -57,8 +55,7 @@ echo engineDetails('event', 'get');
 ### Testing & Benchmarking
 ```php
 echo engineResults('temporal', 'hourNumberToString');
-/*
-[
+/* output: [
 	tests => [
 		single => [
 			total => 12,
@@ -86,9 +83,10 @@ echo engineResults('temporal', 'hourNumberToString');
 	
 if ($desc) return <<<'DESC'
 	
-	A rudimentary
+	Provide consistent month/date formats for our specific app
 	input:
 		month as int, starting in January 2010
+		style as one of several predefined letters
 	output:
 		human-readable month string
 		
