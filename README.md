@@ -25,11 +25,11 @@ echo $str_hour; // "11:30 pm"
 $str_hour = call('temporal', 'hourNumberToString', array(
 	'numeric_hour' => 'WHOOPS!',
 ));
-// E_USER_ERROR: invalid parameter "numeric_hour" in /temporal/hourNumberToString
+// E_USER_ERROR: invalid parameter "numeric_hour" in /temporal/hourNumberToString (expected non-negative int)
 ```
 Example parameter types:
 * `'array'`
-* `'1-5 char string'`
+* `'1-6 char string'`
 * `'venue id'`
 * `'email'`
 * `'positive int'`
