@@ -1,7 +1,8 @@
 # Engine
-A file-based all-in-one module architecture for PHP
-* Secure by default and self-validating
-* Automatic unit testing, benchmarking, and documentation
+A file-based all-in-one module architecture for PHP:
+* Automatic parameter validation
+* Highly dense unit testing, integrated by default
+* Automatic benchmarking and documentation
 
 ## Usage
 One-time initialization:
@@ -26,6 +27,13 @@ $str_hour = call('temporal', 'hourNumberToString', array(
 ));
 // E_USER_ERROR: invalid parameter "numeric_hour" in /temporal/hourNumberToString
 ```
+Example parameter types:
+* `array`
+* `1-5 char string`
+* `venue id`
+* `email`
+* `positive int`
+
 ### Documentation
 ```php
 echo engineDetails('event', 'get');
@@ -83,13 +91,12 @@ echo engineResults('temporal', 'hourNumberToString');
 	
 if ($desc) return <<<'DESC'
 	
-	Provide consistent month/date formats for our specific app
+	Provide consistent site-wide month/date formats for our app
 	input:
 		month as int, starting in January 2010
 		style as one of several predefined letters
 	output:
 		human-readable month string
-		
 DESC;
 	
 if ($init) { return [
