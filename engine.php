@@ -1,12 +1,12 @@
-<?
+<?php
 /*
 	engine.php
 	
 	All the wrapper functions that interface with an <engine> file.
 	
 	NOTE: to be able to test properly, an engine should never trigger_error. it must always return a result.
-		  if there is an error, return array('error', '[error message]')
-]*/
+		  if there is an error, return error('message')
+*/
 
 	function call($category, $function, $params = array(), $testMode = false) {
 	
