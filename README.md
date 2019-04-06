@@ -12,19 +12,19 @@ require_once('engine.php');
 ```
 Calling an engine file:
 ```php
-$str_hour = call('temporal', 'hourNumberToString', array(
+$str_hour = call('temporal', 'hourNumberToString', [
 	'numeric_hour' => 2330,
 	'noonAndMidnight' => true,
-));
+]);
 echo $str_hour; // "11:30 pm"
 ```
 
 ## Automatic Features
 ### Validation
 ```php
-$str_hour = call('temporal', 'hourNumberToString', array(
+$str_hour = call('temporal', 'hourNumberToString', [
 	'numeric_hour' => 'WHOOPS!',
-));
+]);
 // E_USER_ERROR: invalid parameter "numeric_hour" in /temporal/hourNumberToString (expected non-negative int)
 ```
 Example parameter types:
@@ -106,18 +106,18 @@ if ($init) { return [
 
 if ($test) { return [
 	'single' => [
-		'numeric_month' => array(
+		'numeric_month' => [
 			'safe' => 3, // March
 			'pass' => [ 1, 9, 12 ], // [ January, September, December ],
 			'fail' => [ 0, 13, 25, -2, [] ],
-		),
-		'style' => array(
+		],
+		'style' => [
 			'safe' => 'a',
 			'pass' => [ 'b', 'c' ],
 			'fail' => [ 'foo', 12, null, [] ],
-		),
+		],
 	],
-	'full' => array(
+	'full' => [
 		[ 'input' => ['numeric_month' => 1],   'output' => 'January 2010'  ],
 		[ 'input' => ['numeric_month' => 60],  'output' => 'December 2014' ],
 		[ 'input' => ['numeric_month' => 61],  'output' => 'January 2015'  ],
