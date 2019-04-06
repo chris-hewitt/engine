@@ -1,5 +1,5 @@
 # Engine
-A file-based all-in-one module architecture for PHP with:
+File-based module architecture for PHP with:
 * Automatic parameter validation
 * Highly dense unit testing, integrated by default
 * Automatic benchmarking and documentation
